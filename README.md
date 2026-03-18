@@ -1,20 +1,20 @@
 # qm-toolkit
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/bfadem/qm-toolkit/main?labpath=qm_tutorial.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/bfadem/qm-toolkit/main?labpath=qm_starter.ipynb)
 
 A Python toolkit of commonly used matrices, state vectors, and helper functions
 for quantum mechanics. Built for use in upper-division undergraduate physics courses
 at Muhlenberg College, and as a personal sandbox for quantum calculations.
 
-## Launch the Tutorial (Students: Start Here)
+## Launch the Starter Notebook (Students: Start Here)
 
-Click the **Launch Binder** badge above to open the interactive tutorial notebook
-in your browser — no installation required.
+Click the **Launch Binder** badge above to open an interactive workspace in your browser — no installation required.
 
 **Steps:**
-1. Click the badge above (or [this link](https://mybinder.org/v2/gh/bfadem/qm-toolkit/main?labpath=qm_tutorial.ipynb))
+1. Click the badge above (or [this link](https://mybinder.org/v2/gh/bfadem/qm-toolkit/main?labpath=qm_starter.ipynb))
 2. Wait 1–2 minutes for the environment to build (first launch may take longer)
-3. When the notebook opens, run cells with **Shift + Enter**
+3. Run the setup cell first, then use the reference and workspace cells below it
+4. Run any cell with **Shift + Enter**
 
 > **Note:** Binder sessions are temporary. If you make changes you want to keep,
 > use **File → Download** before closing your browser.
