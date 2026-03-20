@@ -27,9 +27,9 @@ Click the **Launch Binder** badge above to open an interactive workspace in your
 | `I2` | 2×2 identity matrix |
 | `sigma_x, sigma_y, sigma_z` | Pauli matrices |
 | `sigma_vec` | List `[sigma_x, sigma_y, sigma_z]` |
-| `spin_up, spin_down` | σ_z eigenstates \|+⟩, \|−⟩ |
-| `xplus, xminus` | σ_x eigenstates |
-| `yplus, yminus` | σ_y eigenstates |
+| `zplus, zminus` | σ_z eigenstates \|+z⟩, \|−z⟩ |
+| `xplus, xminus` | σ_x eigenstates \|+x⟩, \|−x⟩ |
+| `yplus, yminus` | σ_y eigenstates \|+y⟩, \|−y⟩ |
 | `sigma_plus, sigma_minus` | Ladder operators σ± = (1/2)(σ_x ± iσ_y) |
 
 ### Spin-1  (ℏ = 1)
@@ -39,13 +39,13 @@ Click the **Launch Binder** badge above to open an interactive workspace in your
 | `jx, jy, jz` | Spin-1 angular momentum matrices |
 | `j_vec` | List `[jx, jy, jz]` |
 | `jplus, jminus` | Ladder operators j± = jx ± i·jy |
-| `jm1, j0, jm_1` | jz eigenstates for m = +1, 0, −1 |
+| `jp1, j0, jm1` | jz eigenstates for m = +1, 0, −1 |
 
 ### Photon Polarization
 | Object | Description |
 |---|---|
 | `pol_x, pol_y` | Linear polarization states \|x⟩, \|y⟩ |
-| `pol_R, pol_L` | Circular polarization states; convention \|R⟩ = (1/√2)(\|x⟩ + i\|y⟩) |
+| `pol_r, pol_l` | Circular polarization states; convention \|r⟩ = (1/√2)(\|x⟩ + i\|y⟩) |
 
 ### Helper Functions
 | Function | Description |
@@ -54,6 +54,10 @@ Click the **Launch Binder** badge above to open an interactive workspace in your
 | `comm(A, B)` | Commutator [A, B] = AB − BA |
 | `expect(A, psi)` | Expectation value ⟨ψ\|A\|ψ⟩ |
 | `norm(psi)` | Norm √⟨ψ\|ψ⟩ |
+| `normalize(psi)` | Returns psi / norm(psi) |
+| `prob(psi, phi)` | Transition probability \|⟨φ\|ψ⟩\|² |
+| `list_objects()` | Print all available matrices and state vectors |
+| `list_operations()` | Print all available helper functions |
 
 All objects are provided in two forms:
 - **NumPy** (`complex128` ndarray) — for numerical computation
@@ -73,11 +77,17 @@ comm(sigma_x, sigma_y)           # NumPy → 2i·sigma_z
 comm(sigma_x_sym, sigma_y_sym)   # SymPy → 2I·sigma_z
 
 # Expectation value
-expect(sigma_z, spin_up)         # → 1.0
-expect(jz_sym, jm1_sym)          # → 1
+expect(sigma_z, zplus)           # → 1.0
+expect(jz_sym, jp1_sym)          # → 1
 
 # Norm
-norm(pol_R)                      # → 1.0
+norm(pol_r)                      # → 1.0
+
+# Transition probability
+prob(zplus, xplus)               # → 0.5
+
+# Normalize
+normalize(np.array([[3],[4]], dtype=complex))  # → [[0.6],[0.8]]
 
 # Dagger
 dagger(sigma_y)                  # → sigma_y  (Hermitian)
@@ -101,7 +111,8 @@ pip install numpy sympy
 | File | Description |
 |---|---|
 | `qm.py` | Main toolkit module |
-| `qm_tutorial.ipynb` | Full tutorial notebook (coming soon) |
+| `qm_starter.ipynb` | Clean student workspace (Binder entry point) |
+| `qm_tutorial.ipynb` | Full pedagogical tutorial notebook |
 
 ## Running the built-in verification
 
